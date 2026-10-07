@@ -52,13 +52,14 @@ Abra [http://localhost:3000/login](http://localhost:3000/login), escolha um perf
 npm test
 npm run typecheck
 npm run build
+npm run test:http
 npm run security:secrets
 npm run security:history
 ```
 
 ## Como o isolamento funciona
 
-Uma sessão de demonstração é assinada no servidor e enviada em cookie `HttpOnly` e `SameSite=Strict`. O servidor verifica assinatura, validade, perfil, empresa ativa, vínculo e permissão da rota. A troca de empresa exige uma requisição autenticada e valida o vínculo novamente. APIs devolvem `401` sem sessão, `403` para outra empresa ou permissão negada e resposta privada sem cache quando autorizadas. Alterar `tenant` na URL não altera a empresa ativa. Requisições de login, seleção e saída exigem a mesma origem e corpo limitado.
+Uma sessão de demonstração é assinada no servidor e enviada em cookie `HttpOnly` e `SameSite=Strict`. O servidor verifica assinatura, validade, perfil, empresa ativa, vínculo e permissão da rota. A troca de empresa exige uma requisição autenticada e valida o vínculo novamente. APIs devolvem `401` sem sessão, `403` para outra empresa ou permissão negada e resposta privada sem cache quando autorizadas. Alterar `tenant` na URL não altera a empresa ativa. Requisições de login e seleção exigem a mesma origem e corpo limitado. A saída exige a mesma origem.
 
 O mecanismo de entrada usa **uma chave local compartilhada e perfis simulados** para facilitar a exploração. Ele não é um provedor de identidade e não deve ser conectado a dados reais. O projeto não contém credenciais, URLs de serviços, banco, storage, envio de mensagens, checkout ou migrations de produção.
 
