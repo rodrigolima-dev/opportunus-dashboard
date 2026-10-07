@@ -1,0 +1,29 @@
+name: Bug report
+description: Report a reproducible defect using fictional data.
+title: "bug: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "Do not include customer information, credentials, tokens, or real operational URLs."
+  - type: textarea
+    id: behavior
+    attributes:
+      label: What happened?
+      description: Include the route, expected behavior, and observed behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Use a fictional profile and tenant from the local demo.
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Local verification
+      description: Include relevant test output or the reason it was not run.
+    validations:
+      required: false

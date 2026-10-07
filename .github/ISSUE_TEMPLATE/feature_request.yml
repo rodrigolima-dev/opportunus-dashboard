@@ -1,0 +1,26 @@
+name: Feature request
+description: Propose a focused change to the demonstration.
+title: "feat: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: Describe the user-visible need without private business rules.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Include routes, roles, tenants, and acceptance criteria when applicable.
+    validations:
+      required: true
+  - type: checkboxes
+    id: data
+    attributes:
+      label: Data boundary
+      options:
+        - label: The proposal uses only fictional data and contains no secrets or customer information.
+          required: true

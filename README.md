@@ -1,5 +1,17 @@
 # OpportunusAI Dashboard
 
+An executable Next.js and TypeScript dashboard with **fictional organizations, users, orders, and metrics**. It demonstrates tenant-aware navigation, server-side authorization, signed demo sessions, and read-only reporting APIs. No database or cloud account is required to explore it.
+
+**Explore the code:** [architecture](docs/ARCHITECTURE.md) · [contributing](CONTRIBUTING.md) · [security notes](SECURITY.md)
+
+**Run locally:** Node.js 24.x and npm 11.x are required. Run `npm ci`, create `.env.local` from [`.env.example`](.env.example) with two different random values of at least 32 characters, then run `npm run dev` and open `http://localhost:3000/login`. Package installation uses npm; a clean build may download Google Fonts through `next/font/google`.
+
+**Verify:** `npm test`, `npm run typecheck`, `npm run build`, `npm run test:http`, `npm run security:secrets`, and `npm run security:history`.
+
+The login uses a local shared key and fictional roles for exploration. It is **not a production identity provider** and must not be connected to real customer data. The pages and APIs enforce tenant membership and capability checks on the server; the interface also hides unavailable routes.
+
+## Guia em português
+
 Dashboard comercial e operacional em Next.js, React e TypeScript. Esta versão executável usa duas empresas e três perfis **inteiramente fictícios**. O layout segue o painel da aplicação; indicadores, contatos, pedidos e sessões são locais e sintéticos.
 
 ![Painel com informações fictícias](docs/images/overview.png)
@@ -76,4 +88,4 @@ docs/images/      capturas com informações fictícias
 
 Os conjuntos de Aurora e Horizonte são independentes. Os números das tabelas são amostras e podem ter escopo diferente dos totais por período. Todas as imagens foram renderizadas com dados sintéticos. Não inclua dados ou segredos reais em código, testes, capturas ou issues.
 
-Os módulos de permissão, leitura limitada de requisições, respostas privadas, ícones e gráficos mantêm os padrões do painel original. Adapters e contexto de empresa foram ajustados para as duas entidades fictícias. Rotas de mutação comercial, integrações e migrations não fazem parte desta versão executável.
+Os módulos de permissão, leitura limitada de requisições, respostas privadas, ícones e gráficos demonstram a arquitetura da aplicação. Adapters e contexto de empresa usam duas entidades fictícias. Rotas de mutação comercial, integrações e migrations não fazem parte desta demonstração executável.
