@@ -2,7 +2,7 @@
 
 An executable Next.js and TypeScript dashboard with **fictional organizations, users, orders, and metrics**. It demonstrates tenant-aware navigation, server-side authorization, signed demo sessions, and read-only reporting APIs. No database or cloud account is required to explore it.
 
-**Explore the code:** [architecture](docs/ARCHITECTURE.md) · [contributing](CONTRIBUTING.md) · [security notes](SECURITY.md)
+**Explore the code:** [architecture](docs/ARCHITECTURE.md) · [five-minute walkthrough](docs/DEMO_WALKTHROUGH.md) · [contributing](CONTRIBUTING.md) · [security notes](SECURITY.md)
 
 **Run locally:** Node.js 24.x and npm 11.x are required. Run `npm ci`, create `.env.local` from [`.env.example`](.env.example) with two different random values of at least 32 characters, then run `npm run dev` and open `http://localhost:3000/login`. Package installation uses npm; a clean build may download Google Fonts through `next/font/google`.
 
