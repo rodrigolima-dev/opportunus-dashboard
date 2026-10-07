@@ -1,0 +1,5 @@
+import { listProfiles } from "@/lib/access";
+
+export default function LoginPage() {
+  return <main className="login-page"><section className="login-card"><span className="eyebrow">OpportunusAI Dashboard</span><h1>Acessar demonstração</h1><p>Selecione uma identidade fictícia. Esta instalação usa apenas dados locais e não consulta serviços externos.</p><form method="post" action="/api/auth/login"><label htmlFor="profile">Perfil de exemplo</label><select id="profile" name="profile" required>{listProfiles().map((profile) => <option value={profile.id} key={profile.id}>{profile.label}</option>)}</select><label htmlFor="accessKey">Chave local de demonstração</label><input id="accessKey" type="password" name="accessKey" autoComplete="off" required /><button className="button-primary" type="submit">Entrar</button></form><small>A chave é configurada apenas na máquina que executa o painel.</small></section><aside className="login-art" aria-hidden="true"><span>OpportunusAI</span><strong>Clareza para acompanhar cada etapa.</strong><p>CRM, pedidos e operação em um só painel.</p></aside></main>;
+}
