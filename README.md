@@ -27,7 +27,7 @@ Há três perfis de exemplo: **Administração fictícia** acessa ambas as empre
 
 ## Executar localmente
 
-Requisitos: Node.js 24.x e npm 11.x. Não é necessário banco, conta de nuvem, Cloudflare ou serviços externos.
+Requisitos: Node.js 24.x e npm 11.x. A demonstração não usa banco, conta de nuvem ou Cloudflare. A instalação baixa pacotes do npm, e a primeira compilação pode baixar fontes do Google por meio de `next/font/google`.
 
 ```sh
 npm ci
