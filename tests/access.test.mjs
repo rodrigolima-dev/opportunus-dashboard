@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { canAccessTenant, getProfile, hasCapability, listProfiles } from "../src/lib/access.ts";
 import { signSession, verifySession } from "../src/lib/demo-session-crypto.ts";
 import { getDashboardClientAdapter, isSupportedDashboardClient } from "../src/lib/client-adapters.ts";
+import { hasClientCapability } from "../src/lib/roles.ts";
 
 const secret = "unit-test-only-secret-with-adequate-length-123456";
 
@@ -25,6 +26,7 @@ test("roles grant only listed capabilities", () => {
   assert.equal(hasCapability(viewer, "crm:manage"), false);
   assert.equal(hasCapability(viewer, "admin:read"), false);
   assert.equal(hasCapability(admin, "crm:manage"), true);
+  assert.equal(hasClientCapability("unknown-role", "orders:read"), false);
   assert.equal(listProfiles().length, 3);
   assert.equal(getProfile("production-user"), null);
 });
